@@ -21,7 +21,7 @@ if __name__ == '__main__':
         finally:
             if (fopen == None):
                 sys.stderr.write('No ssh key found at this location')
-	        sys.exit(1)
+                sys.exit(1)
     md5_output = check_output(['ssh-keygen','-E','md5','-lf',fopen])
     start_point = md5_output.index(':')
     md5_output = md5_output[start_point+1:md5_output.index(' ',start_point+1)]
